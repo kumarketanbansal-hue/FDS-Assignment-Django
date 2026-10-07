@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fourever You</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    
+    <body>
+        <header>
+            <h1>Fourever You</h1>
+        </header>
+
+        <p>"Fourever You" is a captivating drama series that officially premiered on October 3, 2024, 
+           and concluded its journey on August 4, 2026. Across its run, the series brought together 
+           an incredible cast whose performances brought every story arc and character dynamic to life. 
+           Having started watching on January 14th, 2025, following this multi-year release has been a 
+           remarkable experience. This platform is a tribute to the project—from the main series to its 
+           special episodes—and a showcase for the talented actors who made it all possible.
+        </p>
+        <hr />
+
+        <!-- Authentication Bar -->
+        <div style="margin-bottom: 20px;">
+            {% if user.is_authenticated %}
+            <p>Logged in as: <strong>{{ user.email|default:user.username }}</strong> | 
+                <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" style="background:none; border:none; color:blue; text-decoration:underline; cursor:pointer;">Logout</button>
+                </form>
+            </p>            
+            {% else %}
+            <p><a href="/accounts/login/">Log in</a> to post a comment.</p>
+            {% endif %}
+        </div>
+
+        <!-- Comment Box -->
+        {% if user.is_authenticated %}
+        <h3>Leave a Comment</h3>
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <textarea name="comment_text" rows="4" style="width: 100%; max-width: 600px; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" placeholder="Add a comment..."></textarea>
+            </div>
+            <button type="submit" style="margin-top: 10px; padding: 6px 16px; cursor: pointer;">Comment</button>
+        </form>
+        {% endif %}
+
+        <hr>
+
+        <!-- Comments List -->
+        <h3 style="margin-top: 30px;">Comments ({{ comments.count }})</h3>
+        {% for comment in comments %}
+        <div style="border-bottom: 1px solid #ddd; padding: 10px 0;">
+            <strong>{{ comment.user.email|default:comment.user.username }}</strong>
+            <small style="color: #888; font-size: 0.85em;"> - {{ comment.created_at|date:"M d, Y H:i" }}</small>
+            <p style="margin-top: 5px;">{{ comment.text }}</p>
+        </div>
+        {% empty %}
+        <p style="color: #777;">No comments yet. Be the first to leave one!</p>
+        {% endfor %}
+
+        <footer>
+            <small>© 2026 Kumar Ketan Bansal</small>
+        </footer>
+    </body>
+</html>

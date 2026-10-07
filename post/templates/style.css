@@ -1,0 +1,88 @@
+p {
+    font-size: x-large;
+    color: #4A4652;
+}
+
+h1 {
+    color: #5B3E96;
+    text-align: center;
+}
+
+* {
+    background-color:#F8F6FC;
+    color: #2D2A32;
+    font-weight: normal;
+    margin: 0%;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    height: 35rem;
+    width: 30rem;
+}
+
+.Couple {
+    border: 1rem solid #AF719D;
+    position: relative;
+    height: 632.533px;;
+    width: 985px;
+
+}
+
+.Actors {
+    border: 0.4rem solid #8B639B;
+    width: 480px;
+}
+
+.bottom {
+    position: relative;
+    top: -632.533px;
+    left: 492.8px;
+}
+
+ol {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 200px;
+    row-gap: 10px;
+}
+
+.series {
+    border: 0.6rem solid #F6D8BD;
+    font-size: x-large;
+    width: 480px;
+}
+
+.Magnolia {
+    height: 650px;
+    background-color: #F8F6FC;
+    position: relative;
+}
+
+.Red {
+    height: 600px;
+    width: 900px;
+    background-color: #ED1C24;
+    position: absolute;
+    top: 25px;
+}
+
+.White {
+    height: 400px;
+    width: 900px;
+    background-color: white;
+    position: absolute;
+    top: 100px;
+}
+
+.Blue {
+    height: 200px;
+    width: 900px;
+    background-color: #241D4F;
+    position: absolute;
+    top: 100px;
+}
+

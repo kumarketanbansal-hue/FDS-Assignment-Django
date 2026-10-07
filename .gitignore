@@ -1,0 +1,13 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+
+# Local database
+db.sqlite3
+
+# Virtual environments
+.venv/
+.virtualenvs/
+
+# VS Code directory
+.vscode/
